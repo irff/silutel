@@ -1,3 +1,38 @@
+html, body {
+  height: 100%;
+}
+
+.sl-nav {
+  margin: 0;
+}
+
+.sl-text-primary-color {
+  color: #3498db;
+}
+
+.sl-bg-primary-color {
+  background-color: #3498db;
+}
+
+.sl-alert {
+  margin: 0;
+}
+
+.cover {
+  background: url('../img/silutel-full.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+  min-height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  display: table;
+  position: fixed;
+
+  color: #fff;
+}
+
 .page-header {
   padding: 15px 0;
   text-align: center;
@@ -10,7 +45,8 @@
 }
 
 .sl-front {
-  padding: 100px;
+  display: table-cell;
+  vertical-align: middle;
   text-align: center;
 }
 
@@ -23,7 +59,7 @@ footer {
   position: absolute;
   bottom: 0;
   color: #fff;
-  background-color: #e74c3c;
+  background-color: #3498db;
   margin: 30px 0 0;
   padding : 30px 30px;
 }

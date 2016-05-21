@@ -1,5 +1,6 @@
 <?php
   include "db.php";
+  include "helpers.php";
 ?>
 
 <!DOCTYPE html>
@@ -10,10 +11,12 @@
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/bootstrap-theme.min.css">
   <link rel="stylesheet" href="css/silutel.css">
-  <script src="bootstrap.min.js"></script>
+  <script src="js/jquery-2.2.4.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/angular.min.js"></script>
 </head>
 <body>
-      <nav class="navbar navbar-default">
+      <nav class="navbar navbar-default sl-nav">
         <div class="container">
           <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
@@ -27,7 +30,6 @@
           <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
               <li><a href="index.php">Home</a></li>
-              <li><a href="login.php">Login</a></li>
               <li><a href="beli-inventori.php">Beli Inventori</a></li>
               <li><a href="lihat-inventori.php">Lihat Inventori</a></li>
               <li><a href="lihat-laundry.php">Lihat Laundry</a></li>
@@ -35,12 +37,28 @@
               <li><a href="#">Lihat Booking</a></li>
               <li><a href="#">Lihat Pembelian Inventory</a></li>
             </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <?php
+                if(isLoggedIn()):?>
+                  <li><a href="auth-logout.php" class="">Log Out</a></li>
+                <?php else:?>
+                  <li><a href="login.php" class="">Log In</a></li>
+                <?php
+                endif
+              ?>              
+            </ul>
           </div><!--/.nav-collapse -->
         </div>
       </nav>
     <?php
-      if(isset($_SESSION['message'])) {
-        echo $_SESSION['message'];
+      if(isset($_SESSION['message']) && !empty($_SESSION['message'])):?>
+        <div class="container">
+          <div class="alert alert-warning alert-dismissible sl-alert" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <p><?=$_SESSION['message']?></p>
+          </div>          
+        </div>
+      <?php
         $_SESSION['message'] = "";
-      }
+      endif
     ?>

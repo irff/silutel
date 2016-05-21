@@ -1,6 +1,8 @@
 <?php include "header.php" ?>
 
-<div class="container">
+<?php mustLoggedIn(); ?>
+
+<div class="container" ng-app="Silutel" ng-controller="beliInventori">
   <div class="page-header">
     <div class="row">
       <div class="col-md-12">
@@ -35,7 +37,10 @@
       </form>
     </div>
   </div>
+  {{ pembelian }}
 </div>
 
+
+<script src="js/silutel.js"></script>
 
 <?php include "footer.php" ?>

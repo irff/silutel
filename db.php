@@ -12,8 +12,5 @@ $query = "SELECT VERSION()";
 $rs = pg_query($db_con, $query) or die("Cannot execute query: $query\n"); 
 $row = pg_fetch_row($rs);
 
-if (session_status() === PHP_SESSION_NONE) {
-  session_start();
-}
 
 ?>

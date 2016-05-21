@@ -1,5 +1,7 @@
 <?php include "header.php" ?>
 
+<?php mustLoggedIn(); ?>
+
 <div class="container">
   <div class="page-header">
     <div class="row">
