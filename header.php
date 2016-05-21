@@ -1,3 +1,7 @@
+<?php
+  include "db.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,6 +9,7 @@
   <title>Sistem Informasi Hotel</title>
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="css/silutel.css">
   <script src="bootstrap.min.js"></script>
 </head>
 <body>
@@ -22,12 +27,20 @@
           <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
               <li><a href="index.php">Home</a></li>
+              <li><a href="login.php">Login</a></li>
               <li><a href="beli-inventori.php">Beli Inventori</a></li>
               <li><a href="lihat-inventori.php">Lihat Inventori</a></li>
               <li><a href="lihat-laundry.php">Lihat Laundry</a></li>
-              <li><a href="login.php">Login</a></li>
+              <li><a href="#.php">Ganti Inventori</a></li>
+              <li><a href="#">Lihat Booking</a></li>
+              <li><a href="#">Lihat Pembelian Inventory</a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
       </nav>
-
+    <?php
+      if(isset($_SESSION['message'])) {
+        echo $_SESSION['message'];
+        $_SESSION['message'] = "";
+      }
+    ?>
