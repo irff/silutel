@@ -1,24 +1,37 @@
 <?php include "header.php" ?>
 
 <div class="container">
+  <div class="page-header">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>BELI INVENTORI</h1>
+      </div>
+    </div>    
+  </div>
   <div class="row">
-    <div class="col-md-12">
-      <h1>BELI INVENTORI</h1>
-
+    <div class="col-md-6">
       <form>
         <div class="form-group">
-          <label for="exampleInputEmail1">Nama</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+          <label for="nonota">Nomor Nota</label>
+          <input type="text" class="form-control" id="nonota" placeholder="Nomor Nota">
         </div>
         <div class="form-group">
-          <label for="exampleInputEmail1">Merk</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+          <label for="nama">Nama</label>
+          <input type="text" class="form-control" id="nama" placeholder="Nama">
         </div>
         <div class="form-group">
-          <label for="exampleInputEmail1">Jumlah</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+          <label for="merk">Merk</label>
+          <input type="text" class="form-control" id="merk" placeholder="Merk">
         </div>
-        <button type="submit" class="btn btn-default">Beli</button>
+        <div class="form-group">
+          <label for="jumlah">Jumlah</label>
+          <input type="text" class="form-control" id="jumlah" placeholder="Jumlah">
+        </div>
+        <div class="form-group">
+          <label for="harga">Harga Satuan</label>
+          <input type="text" class="form-control" id="harga" placeholder="Harga Satuan">
+        </div>
+        <button type="submit" class="btn btn-default">Lakukan Pembelian</button>
       </form>
     </div>
   </div>

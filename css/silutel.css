@@ -1,0 +1,29 @@
+.page-header {
+  padding: 15px 0;
+  text-align: center;
+  margin: 0 0 30px;
+}
+
+.sl-pagination {
+  padding: 30px 0;
+  text-align: center;
+}
+
+.sl-front {
+  padding: 100px;
+  text-align: center;
+}
+
+.sl-sort  {
+  padding: 0 40px;
+}
+
+footer {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  color: #fff;
+  background-color: #e74c3c;
+  margin: 30px 0 0;
+  padding : 30px 30px;
+}
