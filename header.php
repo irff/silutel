@@ -10,10 +10,12 @@
   <title>Sistem Informasi Hotel</title>
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="css/datatables.min.css">
   <link rel="stylesheet" href="css/silutel.css">
   <script src="js/jquery-2.2.4.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/angular.min.js"></script>
+  <script src="js/datatables.min.js"></script>
 </head>
 <body>
   <div class="body-wrapper">
