@@ -16,6 +16,7 @@
   <script src="js/angular.min.js"></script>
 </head>
 <body>
+  <div class="body-wrapper">
       <nav class="navbar navbar-default sl-nav">
         <div class="container">
           <div class="navbar-header">
@@ -33,8 +34,8 @@
               <li><a href="beli-inventori.php">Beli Inventori</a></li>
               <li><a href="lihat-inventori.php">Lihat Inventori</a></li>
               <li><a href="lihat-laundry.php">Lihat Laundry</a></li>
-              <li><a href="#.php">Ganti Inventori</a></li>
-              <li><a href="#">Lihat Booking</a></li>
+              <li><a href="#">Ganti Inventori</a></li>
+              <li><a href="lihat-booking.php">Lihat Booking</a></li>
               <li><a href="#">Lihat Pembelian Inventory</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">

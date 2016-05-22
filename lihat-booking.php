@@ -5,17 +5,16 @@
 <?php
 
   $query = 'SELECT * 
-            FROM SILUTEL.LAUNDRY_INVENTORI;';
+            FROM SILUTEL.INVOICE;';
 
   $result = pg_query_params($db_con, $query, array()) or die("Cannot execute query: $query\n");
-
 ?>
 
 <div class="container">
   <div class="page-header">
     <div class="row">
       <div class="col-md-12">
-        <h1>LIHAT LAUNDRY</h1>
+        <h1>LIHAT BOOKING</h1>
       </div>
     </div>    
   </div>
@@ -42,37 +41,43 @@
     <table class="table table-hover">
       <thead>
         <tr>
-          <th>No</th>
-          <th>Nama</th>
-          <th>Merk</th>
-          <th>Staf</th>
-          <th>Waktu</th>
+          <th>Invoice</th>
+          <th>Tanggal Datang</th>
+          <th>Tanggal Pergi</th>
           <th>Jumlah</th>
-          <th>Harga</th>
+          <th>Discount</th>
           <th>Total</th>
-          <th>Tanggal Ambil</th>
+          <th>Nama Tamu</th>
         </tr>
       </thead>
       <tbody>
 <?php
 
-  $counter = 0;
   while($result_row = pg_fetch_row($result)):
-    $counter++;
-?>
+  
+    $tamu_query = 'SELECT Nama
+                   FROM SILUTEL.TAMU
+                   WHERE Id = $1';
+    
+    $id_tamu = $result_row[4];
+
+    $tamu_result = pg_query_params($db_con, $tamu_query, array($id_tamu)) or die("Cannot execute query: $query\n");
+
+    $tamu_result_row = pg_fetch_row($tamu_result);
+  ?>
         <tr>
-          <td><?=$counter?></td>
           <td><?=$result_row[0]?></td>
           <td><?=$result_row[1]?></td>
           <td><?=$result_row[2]?></td>
           <td><?=$result_row[3]?></td>
-          <td><?=$result_row[4]?></td>
           <td><?=$result_row[5]?></td>
-          <td><?=intval($result_row[4])*intval($result_row[5])?></td>
           <td><?=$result_row[6]?></td>
+          <td><?=$tamu_result_row[0]?></td>
         </tr>
+  <?php
+  endwhile;
 
-<?php endwhile; ?>
+?>
       </tbody>
     </table>
 
@@ -97,7 +102,6 @@
     </nav>
 
   </div>
-
 </div>
 
 

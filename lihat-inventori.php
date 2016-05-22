@@ -2,6 +2,14 @@
 
 <?php mustLoggedIn(); ?>
 
+<?php
+
+  $query = 'SELECT * 
+            FROM SILUTEL.INVENTORI;';
+
+  $result = pg_query_params($db_con, $query, array()) or die("Cannot execute query: $query\n");
+?>
+
 <div class="container">
   <div class="page-header">
     <div class="row">
@@ -40,30 +48,19 @@
         </tr>
       </thead>
       <tbody>
+<?php
+  $counter = 0;
+  while($result_row = pg_fetch_row($result)):
+    $counter++;
+?>
         <tr>
-          <td>1</td>
-          <td>Pasta Gigi</td>
-          <td>Pepsodent</td>
-          <td>127</td>
+          <td><?=$counter?></td>
+          <td><?=$result_row[0]?></td>
+          <td><?=$result_row[1]?></td>
+          <td><?=$result_row[2]?></td>
         </tr>
-        <tr>
-          <td>2</td>
-          <td>Sabun Mandi</td>
-          <td>Lifebuoy</td>
-          <td>671</td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td>Sikat Gigi</td>
-          <td>Pepsodent</td>
-          <td>200</td>
-        </tr>
-        <tr>
-          <td>4</td>
-          <td>Handuk</td>
-          <td>Gucci</td>
-          <td>60</td>
-        </tr>
+
+<?php endwhile; ?>
       </tbody>
     </table>
 
