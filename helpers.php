@@ -15,3 +15,10 @@ function mustLoggedIn() {
     header('Location: login.php');
   }
 }
+
+function isRoleEqual($role) {
+  if(isset($_SESSION['role']) && $_SESSION['role'] == $role) {
+    return true;
+  }
+  return false;
+}

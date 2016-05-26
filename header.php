@@ -33,12 +33,42 @@
           <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
               <li><a href="index.php">Home</a></li>
-              <li><a href="beli-inventori.php">Beli Inventori</a></li>
-              <li><a href="lihat-inventori.php">Lihat Inventori</a></li>
-              <li><a href="lihat-laundry.php">Lihat Laundry</a></li>
-              <li><a href="#">Ganti Inventori</a></li>
-              <li><a href="lihat-booking.php">Lihat Booking</a></li>
-              <li><a href="#">Lihat Pembelian Inventory</a></li>
+              <?php
+                if(isRoleEqual('IN')):?>
+                  <li><a href="beli-inventori.php">Beli Inventori</a></li>
+                <?php
+                endif
+              ?>
+              <?php
+                if(isRoleEqual('IN') || isRoleEqual('MG')):?>
+                  <li><a href="lihat-inventori.php">Lihat Inventori</a></li>
+                <?php
+                endif
+              ?>
+              <?php
+                if(isRoleEqual('LA') || isRoleEqual('MG')):?>
+                  <li><a href="lihat-laundry.php">Lihat Laundry</a></li>
+                <?php
+                endif
+              ?>
+              <?php
+                if(isRoleEqual('IN')):?>
+                  <li><a href="#">Ganti Inventori</a></li>
+                <?php
+                endif
+              ?>
+              <?php
+                if(isRoleEqual('MG')):?>
+                  <li><a href="lihat-booking.php">Lihat Booking</a></li>
+                <?php
+                endif
+              ?>
+              <?php
+                if(isRoleEqual('IN') && isRoleEqual('MG')):?>
+                  <li><a href="#">Lihat Pembelian Inventory</a></li>
+                <?php
+                endif
+              ?>
             </ul>
             <ul class="nav navbar-nav navbar-right">
               <?php

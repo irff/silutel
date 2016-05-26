@@ -2,6 +2,13 @@
 
 <?php mustLoggedIn(); ?>
 
+<?php 
+  if(!isRoleEqual('IN')) {
+    $_SESSION['message'] = "Fitur ini hanya bisa diakses oleh STAF INVENTORI";
+    header('Location: notif.php');
+  }
+?>
+
 <div class="container" ng-app="Silutel" ng-controller="beliInventori">
   <div class="page-header">
     <div class="row">
@@ -37,7 +44,6 @@
       </form>
     </div>
   </div>
-  {{ pembelian }}
 </div>
 
 

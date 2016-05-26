@@ -2,6 +2,13 @@
 
 <?php mustLoggedIn(); ?>
 
+<?php 
+  if(!(isRoleEqual('LA') || isRoleEqual('MG'))) {
+    $_SESSION['message'] = "Fitur ini hanya bisa diakses oleh STAF LAUNDRY atau MANAGER";
+    header('Location: notif.php');
+  }
+?>
+
 <?php
 
   $query = 'SELECT * 

@@ -2,6 +2,13 @@
 
 <?php mustLoggedIn(); ?>
 
+<?php 
+  if(!isRoleEqual('MG')) {
+    $_SESSION['message'] = "Fitur ini hanya bisa diakses oleh MANAGER";
+    header('Location: notif.php');
+  }
+?>
+
 <?php
 
   $query = 'SELECT * 

@@ -1,5 +1,7 @@
 <?php 
 
+# SETUP INI DULU
+
 $host = "localhost"; 
 $user = "pgadmin"; 
 $pass = "pgadmin"; 

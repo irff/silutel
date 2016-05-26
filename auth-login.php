@@ -30,6 +30,7 @@
   if ($result_row) {
     print_r($result_row);
     $_SESSION['email'] = $result_row[0];
+    $_SESSION['role'] = $result_row[3];
     $_SESSION['user_is_logged_in'] = true;
     $_SESSION['message'] = "Logged in.";
     header('Location: index.php');
